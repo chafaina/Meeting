@@ -1,81 +1,99 @@
 console.log('login.js');
-var registros,i;
+var registros ;
 
-//DEFINIMOS EL INICIO POR MEDIO DE JQUERY
-$(function(){
+storage = window.localStorage;
 
-	//localStorage, se utiliza en lugar de las cookies y son datos persistentes
-	//localStorage.setItem(variable,valor) >>> GRABAR INFORMACION
-	//localStorage.getItem(variable) >>> RECUPERAR LA INFORMACION
-	//localStorage.removeItem(variable) >>> ELIMINAR LA INFORMACION
+//TOMAMOS REGISTROS
+registros = storage.getItem("registros");
+//PARSE convierte un objeto json en javascript
+registros=JSON.parse(registros);
+//si no tiene ningun valor, lo generamos con un array vacio
+if(registros==null){
+	 registros = [];
+}
 
-	//sessionStorage no son persistenes, expira cuando se cierra la app
 
-	//Ambos se trabaja en una cadena JSON
+var registro = [
+	{correo: 'vmatias888@gmail.com', contraseña: '1234', activo: 1}
+];
 
-	//definimos el storage como localstorage
-	storage = window.localStorage;
+//añadir al objeto JSON
+registros.push(registro);
+//lo alamacenamos con el nombre registro
+storage.setItem("registros", JSON.stringify(registros));
 
-	//TOMAMOS REGISTROS
-	registros = storage.getItem("registros");
-	//PARSE convierte un objeto json en javascript
-	registros=JSON.parse(registros);
-	//si no tiene ningun valor, lo generamos con un array vacio
-	if(registros==null){
-		 registros = [];
+/*
+$("#login").click(function(){
+	console.log('ingreso al click');
+	if ($('#correo').val()!= '')
+	{
+		console.log('ingreso al click');
+		//TOMAMOS REGISTROS
+		registros = storage.getItem("registros");
+		//PARSE convierte un objeto json en javascript
+		registros=JSON.parse(registros);
+		//si no tiene ningun valor, lo generamos con un array vacio
+		if(registros==null){
+			 registros = [];
+		}
+
+		for (var i = 0 - 1; i <=registros.length; i++) {
+			if (registros[i].correo == $("#correo").val() ) {
+				console.log(registros[i].correo);
+			}
+		}
 	}
-	//document.getElementById("salida").innerHTML = "<p>Titulos fuera de línea: "+registros.length+"</p>";
-
-		
-		//falta validacion
-		var titulo = $("#titulo").val();
-		var autor = $("#autor").val();
-		var editorial = $("#editorial").val();
-		var anio = $("#anio").val();
-		//stringfy arma el objeto JSON
-		var registro = JSON.stringify({
-			titulo:titulo,	
-			autor:autor,
-			editorial:editorial,
-			anio:anio
-		});
-		//añadir al objeto JSON
-		registros.push(registro);
-		//lo alamacenamos con el nombre registro
-		storage.setItem("registros", JSON.stringify(registros));
-		//Actualiza mensaje
-		//document.getElementById("salida").innerHTML = "<p>Titulos fuera de línea: "+registros.length+"</p>";
-		alert("Registro añadido fuera de línea existosamente");
-
-
+	else
+	{
+		console.log('Ingresar Correo');
+	}
 });
+*/
 
-	//CUANDO EL USUARIO HACE CLICK
-	$("#forma").click(function(){
-		console.log('click');
-		//falta validacion
-		var titulo = $("#titulo").val();
-		var autor = $("#autor").val();
-		var editorial = $("#editorial").val();
-		var anio = $("#anio").val();
-		//stringfy arma el objeto JSON
-		var registro = JSON.stringify({
-			titulo:titulo,	
-			autor:autor,
-			editorial:editorial,
-			anio:anio
-		});
-		//añadir al objeto JSON
-		registros.push(registro);
-		//lo alamacenamos con el nombre registro
-		storage.setItem("registros", JSON.stringify(registros));
-		//Actualiza mensaje
-		document.getElementById("salida").innerHTML = "<p>Titulos fuera de línea: "+registros.length+"</p>";
-		alert("Registro añadido fuera de línea existosamente");
-		return true;
-	});
-
-	function click(){
-		console.log('entro en el evento');
-	}
+function Click(){
 	
+	if ($("#correo").val()!= '')
+	{
+		//TOMAMOS REGISTROS
+		registros = storage.getItem("registros");
+		//PARSE convierte un objeto json en javascript
+		registros=JSON.parse(registros);
+		//si no tiene ningun valor, lo generamos con un array vacio
+		if(registros==null){
+			 registros = [];
+		}
+
+		for (var i = 0 ; i <=registros.length - 1; i++) {
+			if (registros[i].correo == $("#correo").val() ) {
+				console.log('ok');
+			}
+		}
+	}
+	else
+	{
+		console.log('Ingresar Correo');
+	}
+}
+/*
+//CUANDO EL USUARIO HACE CLICK
+$("#login").click(function(){
+	console.log('click');
+	//falta validacion
+	var correo = $("#correo").val();
+	var pass = $("#pass").val();
+	//stringfy arma el objeto JSON
+	var registro = JSON.stringify({
+	 	correo: correo,
+	 	contraseña: pass,
+	 	activo: 1
+	});
+	//añadir al objeto JSON
+	registros.push(registro);
+	//lo alamacenamos con el nombre registro
+	storage.setItem("registros", JSON.stringify(registros));
+	//Actualiza mensaje
+	document.getElementById("salida").innerHTML = "<p>Titulos fuera de línea: "+registros.length+"</p>";
+	alert("Registro añadido fuera de línea existosamente");
+	return true;
+});
+*/
