@@ -3,7 +3,14 @@ var registros ;
 
 storage = window.localStorage;
 
-//TOMAMOS REGISTROS
+var registro = [
+	{correo: 'vmatias888@gmail.com', contraseña: '1234', activo: 1}
+];
+
+storage.setItem("registros", JSON.stringify(registro));
+
+/*
+//CARGAMOS LOS REGISTROS DEL LOCALSTORAGE (variable definida previamente)
 registros = storage.getItem("registros");
 //PARSE convierte un objeto json en javascript
 registros=JSON.parse(registros);
@@ -11,16 +18,12 @@ registros=JSON.parse(registros);
 if(registros==null){
 	 registros = [];
 }
-
-
-var registro = [
-	{correo: 'vmatias888@gmail.com', contraseña: '1234', activo: 1}
-];
-
-//añadir al objeto JSON
+//Agregamos un registro a los registros del JSON
 registros.push(registro);
 //lo alamacenamos con el nombre registro
 storage.setItem("registros", JSON.stringify(registros));
+*/
+
 
 /*
 $("#login").click(function(){
@@ -65,13 +68,23 @@ function Click(){
 
 		for (var i = 0 ; i <=registros.length - 1; i++) {
 			if (registros[i].correo == $("#correo").val() ) {
-				console.log('ok');
+				console.log(registros[i].correo);
 			}
 		}
 	}
 	else
 	{
-		console.log('Ingresar Correo');
+		var mensaje;
+		var opcion = confirm ("No existe el usuario ingresado, ¿Registrar uno nuevo?");
+		if (opcion == true){
+			mensaje= 'true';
+			myApp.mainView.router.loadPage('login.html');
+		}
+		else{
+			mensaje='false';
+		}
+		console.log(mensaje);
+
 	}
 }
 /*
