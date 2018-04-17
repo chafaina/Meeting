@@ -9,7 +9,7 @@
                 <span> pa atras</span>
             </a>
         </div>
-        <div class="center sliding">login</div>
+        <div class="center sliding">L O G I N</div>
         <div class="right">
             <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
         </div>
@@ -21,23 +21,11 @@
             <div class="content-block">
                 
 
-            </div>
-            <div data-role="content">
-                <form action="#" data-ajax="false">
-                    <label>Titulo:</label>
-                    <input type="text" id="titulo" name="titulo" onclick="click();">
-                    <label>Autor:</label>
-                    <input type="text" id="autor" name="autor">
-                    <label>Editorial:</label>
-                    <input type="text" id="editorial" name="editorial">
-                    <label>Año:</label>
-                    <input type="text" id="anio" name="anio">
-                    <input type="button" value="Almacenar en dispositivo" id="forma" onclick="click()">
-                </form>
-                <div id="salida"></div>
-            </div>
-            <input type="button" value="Almacenar en dispositivo 2" id="forma1" onclick="click();">
-            
+            <h1>MZ Meeting</h1>
+            <span>Login</span>
+            <h3>Iniciar sesion para comenzar</h3>
+
+           
             <form class="list form-store-data" id="my-form">
                 <div class="list-block">
                     <div class="list inline-labels no-hairlines-md">
@@ -47,9 +35,9 @@
                             <i class="icon demo-list-icon"></i>
                           </div>
                           <div class="item-inner">
-                            <div class="item-title item-label">Usuario</div>
+                            <div class="item-title item-label">Correo</div>
                             <div class="item-input-wrap">
-                              <input type="text" placeholder="Usuario:" id="usuario" required validate>
+                              <input type="email" placeholder="ejemplo@meeting.com.ar" id="correo">
                               <span class="input-clear-button"></span>
                             </div>
                           </div>
@@ -61,19 +49,7 @@
                           <div class="item-inner">
                             <div class="item-title item-label">Contraseña</div>
                             <div class="item-input-wrap">
-                              <input type="password" placeholder="Contraseña" id="pass" required validate>
-                              <span class="input-clear-button"></span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="item-content item-input">
-                          <div class="item-media">
-                            <i class="icon demo-list-icon"></i>
-                          </div>
-                          <div class="item-inner">
-                            <div class="item-title item-label">E-mail</div>
-                            <div class="item-input-wrap">
-                              <input type="email" placeholder="Correo">
+                              <input type="password" placeholder="**********" id="pass" required validate>
                               <span class="input-clear-button"></span>
                             </div>
                           </div>
@@ -82,10 +58,9 @@
                     </div>
                 </form>
                 <br>
-                <div class="block block-strong row">
-                  <div class="col"><a class="button convert-form-to-data" href="#">Confirmar</a></div>
-                  <div class="col"><a class="button fill-form-from-data" href="#">Cancelar</a></div>
-                </div>
+                <div id="login" class="col"><a class="col button button-fill color-green" href="#" onclick="Click();" > I N G R E S A R</a></div>
+                <br>
+                <div class="col"><a class="col button color-green" href="#">Omitir</a></div>
             </div>
 
             </div>
