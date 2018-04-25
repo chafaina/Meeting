@@ -53,40 +53,7 @@ $("#login").click(function(){
 });
 */
 
-function Click(){
-	
-	if ($("#correo").val()!= '')
-	{
-		//TOMAMOS REGISTROS
-		registros = storage.getItem("registros");
-		//PARSE convierte un objeto json en javascript
-		registros=JSON.parse(registros);
-		//si no tiene ningun valor, lo generamos con un array vacio
-		if(registros==null){
-			 registros = [];
-		}
 
-		for (var i = 0 ; i <=registros.length - 1; i++) {
-			if (registros[i].correo == $("#correo").val() ) {
-				console.log(registros[i].correo);
-			}
-		}
-	}
-	else
-	{
-		var mensaje;
-		var opcion = confirm ("No existe el usuario ingresado, ¿Registrar uno nuevo?");
-		if (opcion == true){
-			mensaje= 'true';
-			myApp.mainView.router.loadPage('login.html');
-		}
-		else{
-			mensaje='false';
-		}
-		console.log(mensaje);
-
-	}
-}
 /*
 //CUANDO EL USUARIO HACE CLICK
 $("#login").click(function(){
