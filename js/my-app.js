@@ -28,8 +28,8 @@ function inicializarF7(){
 
     });
 
-    // CODIGO PARA EJECUTAR NUESTRAS PAGINAS
-    myApp.mainView.router.loadPage('login.html');
+    // CODIGO PARA EJECUTAR PAGINA AL INICIAR
+    //myApp.mainView.router.loadPage('login.html');
     
 
     // Option 1. Usar la devolución de llamada de página para la página
@@ -91,91 +91,18 @@ function inicializarF7(){
 
     myApp.onPageInit('login', function (page) {
 
-        etiquetaSeleccionada(false);
+        etiquetaSeleccionada(true);
 
         $('#verificarLogin').on('click', function (e) {
             
-            if ($("#correo").val()!= '')
-            {
-                //TOMAMOS REGISTROS
-                registros = storage.getItem("registros");
-                //PARSE convierte un objeto json en javascript
-                registros=JSON.parse(registros);
-                //si no tiene ningun valor, lo generamos con un array vacio
-                if(registros==null){
-                     registros = [];
-                }
-
-                for (var i = 0 ; i <=registros.length - 1; i++) {
-                    //Ingresar a la app si la validacion es correcta
-                    if (registros[i].correo == $("#correo").val() ) {
-                        console.log(registros[i].correo);
-                        myApp.mainView.router.loadPage('index.html');
-                    }
-                    else
-                    {
-                        //alert confirm estilo f7
-                        myApp.modal({
-                            title:  'Advertencia',
-                            text: 'No existe el usuario ingresado, ¿Registrar uno nuevo?',
-                            buttons: [
-                            {
-                                text: 'Aceptar',
-                                onClick: function() {
-                                    myApp.mainView.router.loadPage('register.html');
-                                    cargarListado();
-                                }
-                            },
-                            {
-                                text: 'Cancelar',
-                                /*onClick: function() {
-                                    myApp.alert('Se perdieron los datos');
-                                }*/
-
-                            },
-                            ]
-                        })
-                        /*alert confirm estilo windows
-                        var mensaje;
-                        var opcion = confirm ("No existe el usuario ingresado, ¿Registrar uno nuevo?");
-                        if (opcion == true){
-                            mensaje= 'true';
-                            myApp.mainView.router.loadPage('register.html');
-                        }
-                        */
-                    }
-                }
-            }
-            else
-            {
-                //var opcion = confirm ("Por favor, ingresar sus credenciales!");
-                myApp.modal({
-                    title:  'Datos Faltantes',
-                    text: 'Por favor, ingresar sus credenciales',
-                    buttons: [
-                    {
-                        text: 'Aceptar',
-                        onClick: function() {
-
-                        }
-                    },
-                    {
-                        text: 'Cancelar',
-                        onClick: function() {
-                            myApp.alert('Se requiere credenciales para ingresar a la aplicacion');
-                        }
-                    },
-                    ]
-                })
-
-            }
+            verificarLogin(myApp);
         });
         //FIN VERIFICAR USUARIO//
 
     })
 
-
-
+    myApp.onPageInit('register', function (page) {
+    })
 
     
 
@@ -201,6 +128,7 @@ function inicializarF7(){
                 return;
             }
             /*SI HAY UN HISTORIAL: PAGINA ABIERTA*/
+            /*
             var view = myApp.getCurrentView();
             console.log(view);
             if (!view) return;
@@ -208,10 +136,12 @@ function inicializarF7(){
                 view.router.back();
                 return;
             }
+            */
             /*SI NO SE CUMPLE LO ATERRIOR: CERRAR APP*/
             myApp.confirm('¿Quiere salir de la aplicación?', 'Atención!', function () {
                 navigator.app.exitApp();
             });
+
         }, false);
 
         console.log("Device Ready!");
