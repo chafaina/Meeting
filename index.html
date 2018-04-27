@@ -38,8 +38,11 @@
 
 <body>
 
+
+
     <!-- Views -->
-    <div class="views" data-url="index.html">
+    <div class="views">
+
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main" >
             <!-- Top Navbar-->
@@ -49,13 +52,48 @@
                     <button id="cmdfill" class="col button button-fill color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;" > INICIO </button>
                 </div>
                 <div class="left elementPress" name="menu">
-                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;" > BUSCAR </button>
+                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;" > FAVORITO </button>
                 </div>
                 <div class="left elementPress">
-                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> FAVORITO </button>
+                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> NOTIFICACION </button>
                 </div>
+
+                <!--
                 <div class="left elementPress">
-                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> PERFIL </button>
+                    <a href="login.html" class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> PERFIL </a>
+                </div>
+                -->
+
+                <div class="left" onclick="visiblePopup()">
+                    <img   src="img/nav_der.png" >
+                    <span class="popuptext" id="myPopup">
+                        <p>
+                            <a href="login.html">Perfil</a>
+                        </p>
+                        <p>
+                            <a href="login.html">Configuracion</a>
+                        </p>
+                        <p>
+                            <a href="login.html">Acerca de</a>
+                        </p>
+                        <p>
+                            <a href="login.html">Salir</a>
+                        </p>
+                        <!--
+                        <p style="margin-top:8px;">Fecha</p>
+                        <input class="form-control login" id="fecha" type="password" value="" placeholder="Fecha" />
+                        <p style="margin-top:8px;">Subtitulo</p>
+                        <input  class="form-control login" id="subtilo" value="" placeholder="Subtitulo" />
+                        <p style="margin-top:8px;">Descripcion</p>
+                        <input  class="form-control login" id="descri" value="" placeholder="Descripcion" />
+                        <p style="margin-top:15px;">
+                        -->
+                        <!--
+                        <a class="boton" id="myPopup3_login" style="text-decoration:none;" onclick="hiddenPopup();">Aceptar</a> 
+                        <a class="boton" id="myPopup3_cancelar" style="text-decoration:none;" onclick="hiddenPopup();">Cancelar</a>
+                        -->
+                        <p  id="mensaje_login" style="margin-top:15px"></p>
+                    </span>
                 </div>
 
                 </div>
@@ -122,3 +160,4 @@
 </body>
 
 </html>
+
