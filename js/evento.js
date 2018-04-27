@@ -167,7 +167,7 @@ function cualFue(){
 
 
 
-function visiblePopup(){
+function visiblePopup1(){
     var popup = document.getElementsByClassName("col button button-fill color-green")[0];
     //var popup = $$(".col button button-fill color-green");
     popup.setAttribute("class","col button color-green");
