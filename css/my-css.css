@@ -22,8 +22,8 @@ button: hover {
     visibility: hidden;
     width: 120px;
     height: auto;
-    background-color: #555;
-    color: #fff;
+    background: rgba(209,234,183,0.9);
+    color: white;
     text-align: left;
     padding: 8px;
     position: absolute;
