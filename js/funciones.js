@@ -24,7 +24,7 @@ function etiquetaSeleccionada(newPage){
     });
 }
 
-//SHOW
+//MOSTRAR PANEL LATERAL
 function visiblePopup(){
     var popup = document.getElementById("myPopup");
     //popup.classList.toggle("show"); //agrega la class show > movil.css
@@ -41,9 +41,15 @@ function visiblePopup(){
     
 };
 
-
+//ESCONDER PANE LATERAL
 function hiddenPopup(){
     var popup = document.getElementById("myPopup3");
     popup.setAttribute("class","spanPopup");
     console.log("clickeado")
 }
+
+//OBTENER EL ID DEL ELEMENTO onclick
+function obtenerIdEvento(elemento){
+    idEvento= elemento.id; 
+    //console.log(idEvento);
+};
