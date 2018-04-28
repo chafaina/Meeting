@@ -68,16 +68,16 @@
                     <img   src="img/nav_der.png" >
                     <span class="popuptext" id="myPopup">
                         <p>
-                            <a href="login.html">Perfil</a>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Perfil</a>
                         </p>
                         <p>
-                            <a href="login.html">Configuracion</a>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Configuracion</a>
                         </p>
                         <p>
-                            <a href="login.html">Acerca de</a>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Acerca de</a>
                         </p>
                         <p>
-                            <a href="login.html">Salir</a>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Salir</a>
                         </p>
                         <!--
                         <p style="margin-top:8px;">Fecha</p>
@@ -111,14 +111,15 @@
                                <ul id="ulNotificaciones" data-bind="foreach: seats" style="background: rgba(209,234,183,0.4);">
                                     <li class="licustom">
                                       <!--  if: (cargado == "false") -->
-                                      <a href="about.html" class="item-link item-content">
-                                        <div class="item-media">
+                                      <a data-bind="attr:{id: id}" href="publicacion.html" class="item-link item-content" 
+                                      onclick="obtenerIdEvento(this)">
+                                        <div  class="item-media">
                                             <!-- src="img/camara.png" -->
-                                            <img data-bind="attr:{src: foto}"width="80"/>
+                                            <img data-bind="attr:{src: foto}" width="80"/>
                                         </div>
                                         <div class="item-inner">
                                           <div class="item-title-row">
-                                            <!-- <div class="" data-bind="text: id" style="visibility: hidden;">id</div>-->
+                                            
                                             <div class="item-title" data-bind="text: titulo" style="font-weight: bold;">Titulo</div>
                                             <div class="item-after" ><span class="badge color-green" data-bind="text: leida > 0 ? 'Leido ' : 'NO LEIDO'">Leido</span></div>
                                           </div>
@@ -152,12 +153,12 @@
     <script type="text/javascript" src="js/knockout-3.4.2.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="lib/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="js/my-app.js"></script>
     <script type="text/javascript" src="js/funciones.js"></script>
     <script type="text/javascript" src="js/evento.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
+    
 
 </body>
 
 </html>
-
