@@ -1,8 +1,6 @@
 // PARA MANIPULAR EL DOM
 var $$ = Dom7;
 
-var jsonNotificaciones = '[{"cargado":"false","id":"196fa960c1c74c788fc087c6e4c6710d","titulo":"ExpoAgro 2018","estado":"1","categoria":"AGROINFORMES","idcategoria":"A","descri":"La exposición agroindustrial a campo abierto más importante de la Argentina","empresa":"BITMOBILE","fecha":"19-12-2017 9:15","link":"","subtitulo":"La exposición agroindustrial a campo abierto más importante de la Argentina","usuario":null,"feccre":"2017-12-19T09:15:58","fecupd":"2017-12-19T09:15:58","foto":"img/camara.jpg","encuesta":null,"leida":2},{"id":"196fa960c1c74c788fc087c6e4c6710d","titulo":"Economias Regionales","estado":"1","categoria":"AGROINFORMES","idcategoria":"A","descri":"De los productores en crisis por la baja productividad","empresa":"MZ MATIAS","fecha":"19-12-2017 9:15","link":"","subtitulo":"De los productores en crisis por la baja productividad","usuario":null,"feccre":"2017-10-19T09:15:58","fecupd":"2017-10-19T09:15:58","foto":"img/campo.jpg","encuesta":null,"leida":1},{"id":"196fa960c1c74c788fc087c6e4c6710d","titulo":"Agroactiva","estado":"1","categoria":"PROMOCION","idcategoria":"P","descri":"La exposición más importante de la Argentina","empresa":"AD ANDREA","fecha":"19-12-2017 9:15","link":"","subtitulo":"La exposición más importante de la Argentina","usuario":null,"feccre":"2017-09-19T09:15:58","fecupd":"2017-09-19T09:15:58","foto":"img/firma.jpg","encuesta":null,"leida":5}]';
-
 //JSON: datosJSON es como viene la informacion, todo como un string
 //var datosJSON = "[{"id":"TURISMO","categoria":"T","sinleer":0,"suscripto":true,"tipo":null,"fecupd":"2017-07-19T19:07:13.253","xbaja":false},{"id":"AGROINFORMES","categoria":"A","sinleer":1,"suscripto":true,"tipo":null,"fecupd":"2017-12-19T09:15:58","xbaja":true},{"id":"PROMOCION","categoria":"P","sinleer":0,"suscripto":true,"tipo":null,"fecupd":"2017-07-19T19:07:13.253","xbaja":false}]";
 //Pero hay que pasarlo como un array para trabajarlo
@@ -211,4 +209,3 @@ function hiddenPopup(){
         console.log(id);
 
 });*/
-
