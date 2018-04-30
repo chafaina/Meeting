@@ -9,6 +9,85 @@ var registro = [
 
 storage.setItem("registros", JSON.stringify(registro));
 
+function verificarLogin(myApp){
+    if ($("#correo").val()!= '')
+    {
+        //TOMAMOS REGISTROS
+        registros = storage.getItem("registros");
+        //PARSE convierte un objeto json en javascript
+        registros=JSON.parse(registros);
+        //si no tiene ningun valor, lo generamos con un array vacio
+        if(registros==null){
+             registros = [];
+        }
+
+        for (var i = 0 ; i <=registros.length - 1; i++) {
+            //Ingresar a la app si la validacion es correcta
+            if (registros[i].correo == $("#correo").val() ) {
+                console.log(registros[i].correo);
+                //myApp.mainView.router.loadPage('index.html');
+                var view = myApp.getCurrentView();
+                view.router.back();
+            }
+            else
+            {
+                //alert confirm estilo f7
+                myApp.modal({
+                    title:  'Advertencia',
+                    text: 'No existe el usuario ingresado, ¿Registrar uno nuevo?',
+                    buttons: [
+                    {
+                        text: 'Aceptar',
+                        onClick: function() {
+                            myApp.mainView.router.loadPage('register.html');
+                            cargarListado();
+                        }
+                    },
+                    {
+                        text: 'Cancelar',
+                        /*onClick: function() {
+                            myApp.alert('Se perdieron los datos');
+                        }*/
+
+                    },
+                    ]
+                })
+                /*alert confirm estilo windows
+                var mensaje;
+                var opcion = confirm ("No existe el usuario ingresado, ¿Registrar uno nuevo?");
+                if (opcion == true){
+                    mensaje= 'true';
+                    myApp.mainView.router.loadPage('register.html');
+                }
+                */
+            }
+        }
+    }
+    else
+    {
+        //var opcion = confirm ("Por favor, ingresar sus credenciales!");
+        myApp.modal({
+            title:  'Datos Faltantes',
+            text: 'Por favor, ingresar sus credenciales',
+            buttons: [
+            {
+                text: 'Aceptar',
+                onClick: function() {
+
+                }
+            },
+            {
+                text: 'Cancelar',
+                onClick: function() {
+                    myApp.alert('Se requiere credenciales para ingresar a la aplicacion');
+                }
+            },
+            ]
+        })
+
+    }
+};
+
 /*
 //CARGAMOS LOS REGISTROS DEL LOCALSTORAGE (variable definida previamente)
 registros = storage.getItem("registros");
@@ -77,3 +156,4 @@ $("#login").click(function(){
 	return true;
 });
 */
+

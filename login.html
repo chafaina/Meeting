@@ -1,6 +1,56 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+            <div class="navbar custom" >
+                <div class="navbar-inner" >
+                <div class="left elementPress">
+                    <button id="cmdfill" class="col button button-fill color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;" > INICIO </button>
+                </div>
+                <div class="left elementPress" name="menu">
+                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;" > FAVORITO </button>
+                </div>
+                <div class="left elementPress">
+                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> NOTIFICACION </button>
+                </div>
 
-<!-- Top Navbar-->
+                <!--
+                <div class="left elementPress">
+                    <a href="login.html" class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> PERFIL </a>
+                </div>
+                -->
+
+                <div class="left" onclick="visiblePopup()">
+                    <img   src="img/nav_der.png" >
+                    <span class="popuptext" id="myPopup">
+                        <p>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Perfil</a>
+                        </p>
+                        <p>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Configuracion</a>
+                        </p>
+                        <p>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Acerca de</a>
+                        </p>
+                        <p>
+                            <a style="color: #494F49; font-weight: bold;" href="login.html">Salir</a>
+                        </p>
+                        <!--
+                        <p style="margin-top:8px;">Fecha</p>
+                        <input class="form-control login" id="fecha" type="password" value="" placeholder="Fecha" />
+                        <p style="margin-top:8px;">Subtitulo</p>
+                        <input  class="form-control login" id="subtilo" value="" placeholder="Subtitulo" />
+                        <p style="margin-top:8px;">Descripcion</p>
+                        <input  class="form-control login" id="descri" value="" placeholder="Descripcion" />
+                        <p style="margin-top:15px;">
+                        -->
+                        <!--
+                        <a class="boton" id="myPopup3_login" style="text-decoration:none;" onclick="hiddenPopup();">Aceptar</a> 
+                        <a class="boton" id="myPopup3_cancelar" style="text-decoration:none;" onclick="hiddenPopup();">Cancelar</a>
+                        -->
+                        <p  id="mensaje_login" style="margin-top:15px"></p>
+                    </span>
+                </div>
+
+                </div>
+            </div>
 
 <div class="pages">
     <div data-page="login" class="page" id="login">
@@ -47,10 +97,11 @@
                 <br>
                 <div id="verificarLogin" class="col"><a class="col button button-fill color-green" href="#"> I N G R E S A R</a></div>
                 <br>
-                <div class="col"><a class="col button color-green" href="#">Omitir</a></div>
+                <div id="cancelarLogin" class="col"><a href="index.html" class="col button color-green" href="#">Omitir</a></div>
             </div>
 
             </div>
         </div>
     </div>
 </div>
+

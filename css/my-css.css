@@ -16,3 +16,22 @@ span {
 button: hover {
 	background: red;
 }
+
+
+.popuptext {
+    visibility: hidden;
+    width: 120px;
+    height: auto;
+    background: rgba(209,234,183,0.9);
+    color: white;
+    text-align: left;
+    padding: 8px;
+    position: absolute;
+    z-index: 9999999999;
+   /* bottom: 125%;*/
+   right:1em;
+   top: 44px;
+   padding-left: 18px;
+   -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.40); -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.40); box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.40);
+   
+}
